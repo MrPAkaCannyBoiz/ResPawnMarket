@@ -1,14 +1,23 @@
 package org.example.respawnmarket.entities;
 
-import jakarta.persistence.*;
+import java.time.LocalDateTime;
+
 import org.example.respawnmarket.entities.enums.ApprovalStatusEnum;
 import org.example.respawnmarket.entities.enums.CategoryEnum;
 
-import java.time.LocalDateTime;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "product")
-
 public class ProductEntity
 {
     @Id
@@ -44,17 +53,20 @@ public class ProductEntity
     @Column (name = "register_date", nullable = false)
     private LocalDateTime registerDate;
 
-    @Column (name = "other_category", nullable = true)
-    private String otherCategory;
-
-    //FK
     @ManyToOne
     @JoinColumn(name = "sold_by_customer", nullable = false)
     private CustomerEntity seller;
 
-   public ProductEntity()
-   {
-   }
+    @Column (name = "other_category", nullable = true)
+    private String otherCategory = "";
+
+    @ManyToOne
+    @JoinColumn(name = "pawnshop_id", nullable = true)
+    private PawnshopEntity pawnshop = null;
+
+    public ProductEntity()
+    {
+    }
 
     public ProductEntity(String name, double price, String condition, String description,
                          String photoUrl, CustomerEntity seller, CategoryEnum category)
@@ -69,9 +81,9 @@ public class ProductEntity
         this.approvalStatus = ApprovalStatusEnum.PENDING;
         this.registerDate = LocalDateTime.now();
         this.category = category;
-        this.otherCategory = "";
     }
 
+    // TODO: maybe remove this constructor if not needed
     public ProductEntity(String name, double price, String condition, String description,
                          String photoUrl, CustomerEntity seller, String otherCategory)
     {
@@ -87,7 +99,6 @@ public class ProductEntity
         this.category = CategoryEnum.OTHER;
         this.otherCategory = otherCategory;
     }
-
 
     public int getId()
     {
@@ -149,7 +160,6 @@ public class ProductEntity
         this.photoUrl = photoUrl;
     }
 
-
     public CustomerEntity getSeller()
     {
         return seller;
@@ -198,6 +208,26 @@ public class ProductEntity
     public void setSold(boolean sold)
     {
         this.sold = sold;
+    }
+
+    public String getOtherCategory()
+    {
+        return otherCategory;
+    }
+
+    public void setOtherCategory(String otherCategory)
+    {
+        this.otherCategory = otherCategory;
+    }
+
+    public PawnshopEntity getPawnshop()
+    {
+        return pawnshop;
+    }
+
+    public void setPawnshop(PawnshopEntity pawnshop)
+    {
+        this.pawnshop = pawnshop;
     }
 
 }

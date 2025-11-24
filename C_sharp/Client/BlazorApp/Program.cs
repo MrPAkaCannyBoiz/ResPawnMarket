@@ -16,6 +16,8 @@ builder.Services.AddScoped(sp => new HttpClient
 );
 
 builder.Services.AddScoped<ICustomerServices, HttpCustomerService>();
+builder.Services.AddScoped<IUploadProductService, HttpUploadProductService>();
+
 
 var app = builder.Build();
 
