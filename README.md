@@ -17,7 +17,18 @@ ResPawnMarket is an online pawn shop clone modeled based on typical e-commerce p
 
 # Working Process
 - UP (Unified Process)
-- Kanban **[Link Here (TeamHood)](https://mrpdodaschool.teamhood.com/PHCAWO/Board/SPRNTS?view=KANBAN&token=Ym9hcmRWaWV3OzAxNjZkZTA3NGFlNzQ4M2Y4NGJlZjAzYTg4ZGEwY2Zl)**
+- Kanban ![KanbanBoardExample](sepThreeKanbanBoardExample.png) **[Link Here (TeamHood)](https://mrpdodaschool.teamhood.com/PHCAWO/Board/SPRNTS?view=KANBAN&token=Ym9hcmRWaWV3OzAxNjZkZTA3NGFlNzQ4M2Y4NGJlZjAzYTg4ZGEwY2Zl)**
+
+# Analysis
+- ### Domain Model
+![Domain Model](domain_model.png)
+
+# Designs
+- ### EER (Enhanced Entity Relationship) diagram
+![EER](EER.png)
+
+- ### GR (Global Relational) diagram
+![GR](GR.png)
 
 # TLS/SSL Certificate Setup Guide
 
