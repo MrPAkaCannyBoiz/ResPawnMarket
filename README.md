@@ -21,14 +21,14 @@ ResPawnMarket is an online pawn shop clone modeled based on typical e-commerce p
 
 # Analysis
 - ### Domain Model
-![Domain Model](domain_model.png)
+![Domain Model](./documents/images/domain_model.png)
 
 # Designs
 - ### EER (Enhanced Entity Relationship) diagram
-![EER](EER.png)
+![EER](./documents/images/EER.png)
 
 - ### GR (Global Relational) diagram
-![GR](GR.png)
+![GR](./documents/images/GR.png)
 
 # TLS/SSL Certificate Setup Guide
 
